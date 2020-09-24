@@ -5,7 +5,12 @@ if (typeof require === 'function') {
 import fs from 'fs'
 import path from 'path'
 
-const importDir = (directory = '.', options = {}) => {
+/**
+ * @param {string} directory The base directory to start importing from.
+ * @param {Object} [options={}] The options for import-dir
+ * @param {number} [currentDepth=0] Internal Counter to keep track of the current recursion depth
+ */
+const importDir = (directory = '.', options = {}, currentDepth = 0) => {
     if (directory.startsWith('.')) {
         throw new Error('Relative paths are not supported, please resolve your relative path to an absolute path.');
 
@@ -43,12 +48,8 @@ const importDir = (directory = '.', options = {}) => {
             if (fs.statSync(abs).isDirectory()) {
                 if (options.recurse && base != 'node_modules') {
                     if (options.recurseDepth) {
-                        options.currentDepth = options.currentDepth ? options.currentDepth : 0;
-
-                        if (options.recurseDepth > options.currentDepth) {
-                            const currentDepth = options.currentDepth ? options.currentDepth+1 : 1;
-
-                            map[base] = importDir(abs, Object.assign(options, { currentDepth }));
+                        if (options.recurseDepth > currentDepth) {
+                            map[base] = importDir(abs, options, currentDepth + 1);
                         }
                     }
                     else map[base] = importDir(abs, options);
