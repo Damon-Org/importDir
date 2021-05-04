@@ -78,6 +78,8 @@ let dir = importDir('/path/to/dir', { recurse: true });
 (`node_modules` within subdirectories will be ignored.)
 Default is false.
 
+`recurseDepth`: Set how deep we have to recurse.
+
 `noCache`: Prevent file caching. Could be useful using gulp.watch or other watch requiring refreshed file content Default is false.
 
 ```js

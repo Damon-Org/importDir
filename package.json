@@ -1,26 +1,23 @@
 {
-    "name": "@yimura/import-dir",
-    "description": "Helper to import() directories.",
-    "version": "0.1.10",
-    "author": "yimura <andreas.maerten@scarlet.be>",
-    "license": "MIT",
-    "type": "module",
-    "dependencies": {},
-    "engines": {
-        "node": "*"
-    },
-    "homepage": "https://github.com/Damon-Org/importDir",
-    "repository": {
-      "type": "git",
-        "url": "https://github.com/Damon-Org/importDir.git"
-    },
-    "bugs": {
-        "url": "https://github.com/Damon-Org/importDir/issues"
-    },
-    "keywords": [
-        "import",
-        "directory",
-        "import dir",
-        "dir import"
-    ]
+  "name": "@yimura/import-dir",
+  "version": "0.1.11",
+  "description": "Helper to asyncronously import directories.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yimura/importDir.git"
+  },
+  "keywords": [
+    "import",
+    "dir"
+  ],
+  "author": "yimura <andreas.maerten@scarlet.be>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Yimura/importDir/issues"
+  },
+  "homepage": "https://github.com/Yimura/importDir#readme"
 }
